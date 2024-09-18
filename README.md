@@ -1,7 +1,8 @@
-Projeto de RecepÁ„o de Protocolos
-Este projeto consiste em uma soluÁ„o para recepÁ„o e processamento de protocolos de solicitaÁ„o de emiss„o de documentos de identidade (RG). A soluÁ„o inclui os seguintes componentes:
+Projeto de Recep√ß√£o de Protocolos
 
-Publisher: Respons·vel por publicar protocolos (mensagens) na fila do RabbitMQ.
+Este projeto consiste em uma solu√ß√£o para recep√ß√£o e processamento de protocolos de solicita√ß√£o de emiss√£o de documentos de identidade (RG). A solu√ß√£o inclui os seguintes componentes:
+
+Publisher: Respons√°vel por publicar protocolos (mensagens) na fila do RabbitMQ.
 Consumer: Consome as mensagens da fila, valida e persiste os protocolos no banco de dados.
 API: Disponibiliza uma interface REST para consulta dos protocolos.
 
@@ -11,14 +12,14 @@ RabbitMQ (via Docker)
 Entity Framework Core (EF Core)
 SQL Server (via Docker)
 Polly para retries
-Swagger para documentaÁ„o da API
+Swagger para documenta√ß√£o da API
 Serilog para logging
 Requisitos
 .NET 7 SDK instalado.
-Docker e Docker Compose configurados e em execuÁ„o.
+Docker e Docker Compose configurados e em execu√ß√£o.
 
-ConfiguraÁ„o Inicial
-1. Clone o repositÛrio:
+Configura√ß√£o Inicial
+1. Clone o reposit√≥rio:
 git clone https://github.com/seu-repositorio/projeto-de-recepcao-de-protocolos.git
 cd projeto-de-recepcao-de-protocolos
 
@@ -26,8 +27,8 @@ cd projeto-de-recepcao-de-protocolos
 Inicie o RabbitMQ com o Docker Compose:
 docker-compose up -d
 
-3. MigraÁıes do Banco de Dados
-Caso seja necess·rio, vocÍ pode criar as migraÁıes e atualizar o banco de dados utilizando os comandos do Entity Framework Core:
+3. Migra√ß√µes do Banco de Dados
+Caso seja necess√°rio, voc√™ pode criar as migra√ß√µes e atualizar o banco de dados utilizando os comandos do Entity Framework Core:
 
 cd Consumer
 dotnet ef migrations add InitialCreate
@@ -35,37 +36,37 @@ dotnet ef migrations add InitialCreate
 Atualizar o banco de dados:
 dotnet ef database update
 
-VocÍ pode acessar a interface do RabbitMQ em: http://localhost:15672 (usu·rio: guest, senha: guest).
+Voc√™ pode acessar a interface do RabbitMQ em: http://localhost:15672 (usu√°rio: guest, senha: guest).
 
-ExecuÁ„o do Projeto
+Execu√ß√£o do Projeto
 
 4. Publicar Mensagens (Publisher)
-Navegue atÈ o diretÛrio do Publisher e execute o projeto:
+Navegue at√© o diret√≥rio do Publisher e execute o projeto:
 cd Publisher
 dotnet run
 
-Isso enviar· 10 protocolos mockados para a fila RabbitMQ.
+Isso enviar√° 10 protocolos mockados para a fila RabbitMQ.
 
 5. Consumir Mensagens (Consumer)
-Navegue atÈ o diretÛrio do Consumer e execute o projeto:
+Navegue at√© o diret√≥rio do Consumer e execute o projeto:
 cd Consumer
 dotnet run
 
-O Consumer vai consumir as mensagens, validar e salv·-las no banco de dados.
+O Consumer vai consumir as mensagens, validar e salv√°-las no banco de dados.
 
 6. Iniciar a API
-Navegue atÈ o diretÛrio da API e execute o projeto:
+Navegue at√© o diret√≥rio da API e execute o projeto:
 cd Api
 dotnet run
 
-A API estar· disponÌvel em http://localhost:5000
+A API estar√° dispon√≠vel em http://localhost:5000
 
 Swagger em http://localhost:5238/swagger/index.html
 
 Endpoints da API
 
-AutenticaÁ„o com Token JWT
-Antes de utilizar os endpoints da API, vocÍ deve se autenticar e obter um token JWT.
+Autentica√ß√£o com Token JWT
+Antes de utilizar os endpoints da API, voc√™ deve se autenticar e obter um token JWT.
 Obtenha o token JWT via o endpoint /auth/token
 
 POST /auth/token
@@ -75,7 +76,7 @@ POST /auth/token
 }
 
 Logs
-Os logs do Consumer s„o gerados no arquivo consumer.log no diretÛrio do projeto. Logs tambÈm s„o mostrados no console e incluem:
+Os logs do Consumer s√£o gerados no arquivo consumer.log no diret√≥rio do projeto. Logs tamb√©m s√£o mostrados no console e incluem:
 
 Erros de processamento.
 Mensagens de sucesso ao salvar protocolos no banco.
