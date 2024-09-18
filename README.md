@@ -7,6 +7,7 @@ Consumer: Consome as mensagens da fila, valida e persiste os protocolos no banco
 API: Disponibiliza uma interface REST para consulta dos protocolos.
 
 Tecnologias Utilizadas
+
 .NET 7
 RabbitMQ (via Docker)
 Entity Framework Core (EF Core)
@@ -19,6 +20,7 @@ Requisitos
 Docker e Docker Compose configurados e em execução.
 
 Configuração Inicial
+
 1. Clone o repositório:
 git clone https://github.com/seu-repositorio/projeto-de-recepcao-de-protocolos.git
 cd projeto-de-recepcao-de-protocolos
