@@ -22,7 +22,7 @@ Docker e Docker Compose configurados e em execução.
 Configuração Inicial
 
 1. Clone o repositório:
-git clone https://github.com/seu-repositorio/projeto-de-recepcao-de-protocolos.git
+git clone https://github.com/RDomingos09/MzTech.git
 cd projeto-de-recepcao-de-protocolos
 
 2. Configurando o RabbitMQ (via Docker)
